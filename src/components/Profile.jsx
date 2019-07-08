@@ -12,14 +12,16 @@ const Profile = () => {
         <div>
             My posts
           <div>
-                New Post
-          </div>
-            <div>
-                post1
-          </div>
-            <div>
-                post2
-          </div>
+            New Post
+        </div>
+            <div className='posts'>
+                <div className='item'>
+                    post1
+                </div>
+                <div className='item'>
+                    post2
+                </div>
+            </div>
         </div>
     </div>;
 }
