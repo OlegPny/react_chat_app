@@ -1,13 +1,14 @@
 import React from 'react';
 import classes from './Post.module.css';
+import { isPatternLike } from '@babel/types';
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div className={classes.item}>
-            <img src='http://www.coollady.ru/pic/0001/avatar/avatar-49.jpg'></img>
-            post1
-                <div>
-                <span>like</span>
+            <img src='https://dota2.ru/img/forum/avatars/l/490/490004.jpg?1550514780'></img>
+            {props.message}
+            <div>
+                <span>like {props.likeCount}</span>
             </div>
         </div>
     )
