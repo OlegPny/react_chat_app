@@ -4,11 +4,16 @@ import { NavLink } from 'react-router-dom';
 
 const DialogItem = (props) => {
     return (
-        <div className='dialog'>
+        <div className={s.dialog}>
             <NavLink to={"/messages/" + props.id}>{props.name}</NavLink>
         </div>
     )
+}
 
+const Message = (props) => {
+    return (
+        <div className={s.message}>{props.message}</div>
+    )
 }
 
 
@@ -23,8 +28,8 @@ const Dialogs = (props) => {
                 <DialogItem name="User4" id="4" />
             </div>
             <div className={s.messages}>
-                <div className={s.message}>Привет!</div>
-                <div className={s.message}>Как дела?</div>
+                <Message message="Привет!" />
+                <Message message="Как дела?" />
             </div>
         </div>
     )
