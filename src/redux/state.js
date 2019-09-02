@@ -16,6 +16,13 @@ let state = {
             {id: 4, message: 'Yo'},
             {id: 5, message: 'Yo'},
         ]
+    },
+
+    profileState: {
+        postsData: [
+            {id: 1, message: 'This is my first experiment with props', likesCount: 12},
+            {id: 2, message: 'Hi how are you?', likesCount: 10},
+        ]
     }
 };
 
