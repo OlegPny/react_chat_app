@@ -1,3 +1,5 @@
+import {rerenderEntireTree} from "../render";
+
 let state = {
     dialogsState: {
         dialogsData: [
@@ -28,7 +30,6 @@ let state = {
 
 // нарушение принципа чистых функций
 export let addPost = (postMessage) => {
-    debugger;
     let newPost = {
         id : state.profileState.postsData.length,
         message : postMessage,
@@ -36,6 +37,7 @@ export let addPost = (postMessage) => {
     };
 
     state.profileState.postsData.push(newPost);
+    rerenderEntireTree();
 };
 
 export default state;
