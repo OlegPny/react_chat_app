@@ -2,17 +2,12 @@ import React from 'react';
 import MyPosts from './myPosts/MyPosts';
 import ProfileInfo from './profileInfo/ProfileInfo';
 
-const Profile = () => {
-
-    let postsData = [
-        {id: 1, message: 'This is my first experiment with props', likesCount: 12},
-        {id: 2, message: 'Hi how are you?', likesCount: 10},
-    ]
+const Profile = (props) => {
 
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts postsData = {postsData}/>
+            <MyPosts postsData = {props.profileState.postsData}/>
         </div>
     )
 }
