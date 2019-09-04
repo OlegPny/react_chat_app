@@ -27,9 +27,10 @@ let state = {
 };
 
 // нарушение принципа чистых функций
-let addPost = (postMessage) => {
+export let addPost = (postMessage) => {
+    debugger;
     let newPost = {
-        id : 3,
+        id : state.profileState.postsData.length,
         message : postMessage,
         likesCount: 0
     };
