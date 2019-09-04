@@ -26,4 +26,15 @@ let state = {
     }
 };
 
+// нарушение принципа чистых функций
+let addPost = (postMessage) => {
+    let newPost = {
+        id : 3,
+        message : postMessage,
+        likesCount: 0
+    };
+
+    state.profileState.postsData.push(newPost);
+};
+
 export default state;
