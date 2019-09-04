@@ -12,6 +12,7 @@ const MyPosts = (props) => {
     let addPost = () => {
         let text = textAreaRef.current.value;
         props.addPost(text);
+        textAreaRef.current.value = '';
     };
 
     return (

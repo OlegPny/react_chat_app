@@ -31,13 +31,13 @@ let state = {
 // нарушение принципа чистых функций
 export let addPost = (postMessage) => {
     let newPost = {
-        id : state.profileState.postsData.length,
+        id : state.profileState.postsData.length + 1,
         message : postMessage,
         likesCount: 0
     };
 
     state.profileState.postsData.push(newPost);
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 };
 
 export default state;
