@@ -24,20 +24,31 @@ let state = {
         postsData: [
             {id: 1, message: 'This is my first experiment with props', likesCount: 12},
             {id: 2, message: 'Hi how are you?', likesCount: 10},
-        ]
+        ],
+
+        newPostText: 'Введите текст...'
     }
 };
 
 // нарушение принципа чистых функций
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id : state.profileState.postsData.length + 1,
-        message : postMessage,
+        message: state.profileState.newPostText,
         likesCount: 0
+
     };
 
     state.profileState.postsData.push(newPost);
+    state.profileState.newPostText = '';
     rerenderEntireTree(state);
 };
+
+export let updateNewPostText = (newText) => {
+    state.profileState.newPostText = newText;
+    rerenderEntireTree(state);
+};
+
+
 
 export default state;
