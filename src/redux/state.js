@@ -1,4 +1,6 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree = () => {
+    console.log('State was changed');
+}
 
 let state = {
     dialogsState: {
@@ -49,6 +51,9 @@ export let updateNewPostText = (newText) => {
     rerenderEntireTree(state);
 };
 
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer; //observer
+}
 
 
 export default state;
