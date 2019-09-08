@@ -1,19 +1,19 @@
-import state, {addPost, subscribe, updateNewPostText} from './redux/state'
+import store from './redux/state'
 import ReactDOM from "react-dom";
 import App from "./App";
 import React from "react";
 import './index.css';
 
 export let rerenderEntireTree = (state) => {
-    ReactDOM.render(<App state={state}
-                         addPost={addPost}
-                         updateNewPostText={updateNewPostText} />,
+    ReactDOM.render(<App state={store.getState()} //getState() вызван от имени store
+                         addPost={store.addPost} //колбек- функция отдалась кому-то
+                         updateNewPostText={store.updateNewPostText} />,
         document.getElementById('root'));
 }
 
-rerenderEntireTree(state);
+rerenderEntireTree(store.getState());
 
-subscribe(rerenderEntireTree);
+store.subscribe(rerenderEntireTree);
 
 
 
