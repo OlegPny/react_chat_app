@@ -38,7 +38,6 @@ let store = {
     },
 
     addPost() {
-        debugger;
         let newPost = {
             id: this._state.profileState.postsData.length + 1,
             message: this._state.profileState.newPostText,

@@ -10,7 +10,7 @@ const MyPosts = (props) => {
     let textAreaRef = React.createRef();
 
     let addPost = () => {
-        props.addPost();
+        props.addPost(); //addPost вызван от имени props, и this ссылается на свойства и методы props
     };
 
     let onPostChange = () => {
