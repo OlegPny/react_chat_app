@@ -6,9 +6,7 @@ import './index.css';
 
 export let rerenderEntireTree = (state) => {
     ReactDOM.render(<App state={store.getState()} //getState() вызван от имени store
-                         addPost={store.addPost.bind(store)} //колбек- функция отдалась кому-то
-                         updateNewPostText={store.updateNewPostText.bind(store)} />,
-        document.getElementById('root'));
+                         dispatch={store.dispatch.bind(store)}/>, document.getElementById('root'));
 }
 
 rerenderEntireTree(store.getState());

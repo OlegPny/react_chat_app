@@ -10,12 +10,12 @@ const MyPosts = (props) => {
     let textAreaRef = React.createRef();
 
     let addPost = () => {
-        props.addPost(); //addPost вызван от имени props, и this ссылается на свойства и методы props
+        props.dispatch({type: 'ADD-POST'}); //addPost вызван от имени props, и this ссылается на свойства и методы props
     };
 
     let onPostChange = () => {
         let text = textAreaRef.current.value;
-        props.updateNewPostText(text);
+        props.dispatch({type: 'UPDATE-POST-TEXT', newPostText : text});
     };
 
     return (
